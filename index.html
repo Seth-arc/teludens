@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HALE Splash Screen - Advanced</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="splash-screen" id="splashScreen">
+        <canvas id="particleCanvas"></canvas> <!-- NEW: Canvas for particles -->
+
+        <div class="top-left-logo animated-element" data-animation-type="fadeIn" data-delay="500">HIL</div>
+
+        <div class="small-text-group small-text-top-left animated-element" data-animation-type="fadeIn" data-delay="2800">
+            <span class="typewriter-text" data-type-delay="50" data-text="PR0T3CT M0D3: 0N"></span>
+            <span class="micro-animated" data-micro-delay="100">SYS_CHK: D600 R HALE</span>
+            <span class="micro-animated" data-micro-delay="200">MEM_SCAN: COMPLETE</span>
+        </div>
+        <div class="small-text-top-right animated-element" data-animation-type="fadeIn" data-delay="3000">
+            <span class="micro-animated" data-micro-delay="0">HALLE NON ON OUT</span>
+        </div>
+
+        <div class="main-content parallax-layer" data-parallax-factor="0.02"> <!-- NEW: Parallax layer -->
+            <svg class="head-svg animated-element" id="headSvg" data-animation-type="scaleUp" data-delay="800" viewBox="0 0 200 250" preserveAspectRatio="xMidYMid meet">
+                <defs>
+                    <linearGradient id="headGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color:#ff69b4; stop-opacity:1"/>
+                        <stop offset="100%" style="stop-color:#8a2be2; stop-opacity:1"/>
+                    </linearGradient>
+                    <filter id="glowEffect" x="-50%" y="-50%" width="200%" height="200%">
+                        <feGaussianBlur stdDeviation="3.5" result="coloredBlur"/>
+                        <feMerge>
+                            <feMergeNode in="coloredBlur"/>
+                            <feMergeNode in="SourceGraphic"/>
+                        </feMerge>
+                    </filter>
+                </defs>
+                <path id="headOutline" class="svg-draw"
+                      d="M100,5 C70,5 45,25 40,50 C35,75 40,100 50,120 L50,140 
+                         C45,155 40,170 45,185 C50,200 60,215 75,225 
+                         C80,230 85,235 90,238 L90,245 L110,245 L110,238
+                         C115,235 120,230 125,225
+                         C140,215 150,200 155,185 C160,170 155,155 150,140 L150,120
+                         C160,100 165,75 160,50 C155,25 130,5 100,5 Z"
+                      fill="none" stroke-width="2"/>
+                <g id="circuitLines">
+                    <!-- Simplified circuit lines (same as before, but ensure they are .svg-draw) -->
+                    <path class="svg-draw circuit-line" d="M100,25 L100,50 M100,50 L80,60 M100,50 L120,60" />
+                    <path class="svg-draw circuit-line" d="M90,70 L90,100 M90,100 L70,110 Q60,120 70,130 L90,140" />
+                    <path class="svg-draw circuit-line" d="M110,70 L110,100 M110,100 L130,110 Q140,120 130,130 L110,140" />
+                    <path class="svg-draw circuit-line" d="M80,150 L80,180 L70,190" />
+                    <path class="svg-draw circuit-line" d="M120,150 L120,180 L130,190" />
+                    <path class="svg-draw circuit-line" d="M95,200 L95,220" />
+                    <path class="svg-draw circuit-line" d="M105,200 L105,220" />
+                    <circle class="svg-draw circuit-dot" cx="80" cy="60" r="2" />
+                    <circle class="svg-draw circuit-dot" cx="120" cy="60" r="2" />
+                    <circle class="svg-draw circuit-dot" cx="70" cy="110" r="2" />
+                    <circle class="svg-draw circuit-dot" cx="130" cy="110" r="2" />
+                    <circle class="svg-draw circuit-dot" cx="90" cy="140" r="2" />
+                    <circle class="svg-draw circuit-dot" cx="110" cy="140" r="2" />
+                </g>
+            </svg>
+
+            <div class="title-container parallax-layer" data-parallax-factor="0.03"> <!-- NEW: Parallax layer -->
+                <div class="main-title animated-element" data-animation-type="glitchIn" data-delay="2000">
+                    <span data-text="HALE">HALE</span> <!-- For glitch effect -->
+                </div>
+                <div class="subtitle animated-element" data-animation-type="fadeIn" data-delay="2500">
+                    <span>L</span><span>E</span><span>A</span><span>T</span><span>G</span><span>R</span><span>H</span><span>!</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Decorative Lines - modified for wipe animation -->
+        <div class="decorative-line-container animated-element" data-animation-type="none" data-delay="3200">
+            <div class="decorative-line line-1"></div>
+        </div>
+        <div class="decorative-line-container animated-element" data-animation-type="none" data-delay="3300">
+            <div class="decorative-line line-2"></div>
+        </div>
+         <div class="decorative-line-container animated-element" data-animation-type="none" data-delay="3400">
+            <div class="decorative-line line-3"></div>
+        </div>
+
+        <div class="small-text-group small-text-bottom-left animated-element" data-animation-type="fadeIn" data-delay="3500">
+            <span class="micro-animated" data-micro-delay="0">-- BEETLE</span>
+            <span class="micro-animated" data-micro-delay="100">SETVID S Y G01</span>
+            <span class="micro-animated" data-micro-delay="200">V E L L T MRE</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
